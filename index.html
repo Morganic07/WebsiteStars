@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparaison des étoiles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #panel {
+  width: 300px;
+  background-color: #000; 
+  color: #fff; 
+  font-family: 'Play', sans-serif; 
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 1);
+  border-right: 3px solid transparent; 
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  transition: transform 0.3s ease, border-color 0.3s ease; 
+}
+
+#panel:not(.hidden) {
+  border-right: 3px solid #0078D4; 
+}
+
+#panel.hidden {
+  transform: translateX(-100%);
+  width: 0;
+  padding: 0;
+  border-right: 3px solid transparent; 
+}
+
+    #panel-toggle {
+  position: absolute;
+  top: 50%;
+  left: 300px; 
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #0078D4;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+  transition: left 0.3s ease, transform 0.3s ease;
+}
+
+#panel-toggle.hidden {
+  left: 0; 
+  transform: translateY(-50%) rotate(180deg); 
+}
+
+
+
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      height: 100vh;
+      border: none;
+      transition: width 0.3s ease;
+    }
+
+    body.panel-hidden iframe {
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <div id="panel">
+
+    <h2>How to navigate on the website</h2>
+    <ul>
+        <li>Press "?" in bottom left pannel to see how to navigate in 3D</li>
+        <li>Press "⌞⌝ " in the bottom left pannel to have a full screen experience </li>
+        <li>Don't press any other button in the bottom left pannel, it will distract you </li>
+        <li>You must click on the arrows in the middle bottom to navigate through the stars (or press J and K), I highly suggest to follow the order (Jupiter, then the Sun, then Sirius ...)</li>
+        <li>If the text boxes do not fully appear on the screen, adjust the zoom level of the web page (press "CTRL" + "-").</li>
+
+    </ul>
+
+    <h2> What is a star ?</h2>
+
+
+    <p>When you look up at the night sky, the stars appear as tiny points of light, but in reality, they are unimaginably vast.</p>
+    <p>Did you know that stars can vary greatly in size? But just how large are they?</p>
+    <p>To help you explore, I’ve selected my 7 favorite stars to share with you.</p>
+
+
+    <p>A star is a massive celestial body composed primarily of hydrogen and helium, producing energy through nuclear fusion in its core. This reaction releases light, heat, and other forms of radiation. Stars vary in size, temperature, color, and lifespan, ranging from a few million to several billion years.</p>
+    <p>Like in boxing, a star’s category is determined not by its size but by its mass.</p>
+    <p>Thus, the more massive and dense a star is, the more concentrated its matter, and the hotter it will be.</p>
+    <p>The colder a star, the more its color shifts toward red, whereas hotter stars appear white-blue or even violet in rare cases.    </p>
+    <p>A red star is therefore a low-density star, while a white or blue star is extremely dense.    </p>
+
+    <p>The size of a star doesn’t determine its mass or temperature. Stars start "small," but as their hydrogen reserves run out, the hydrostatic equilibrium breaks. Internal pressure surpasses external pressure, causing the star to expand, sometimes 4 to 200 times its initial volume, depending on its original mass. As the star expands, its density decreases, shifting its color toward red. Despite these changes, the star’s mass remains constant.</p>
+
+    <h3>Star Categories by Size (from smallest to biggest):    </h3>
+    <ul>
+        <li>Red dwarf</li>
+        <li>Solar-type star (same characteristics as the Sun)</li>
+        <li>Giant</li>
+        <li>Supergiant</li>
+        <li>Hypergiant</li>
+    </ul>
+
+
+    <p>Enjoy the journey :) </p>
+  </div>
+
+  
+  <button id="panel-toggle">&#9664;</button>
+  <iframe title="Stars by Momo" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a64ff34315e74697b90dfb107109fc64/embed?autostart=1&annotations_visible=1&preload=1&annotation=1&ui_theme=dark"> </iframe>
+
+  <script>
+    const panel = document.getElementById('panel');
+    const toggleButton = document.getElementById('panel-toggle');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+  panel.classList.toggle('hidden');
+  toggleButton.classList.toggle('hidden');
+  body.classList.toggle('panel-hidden');
+});
+
+  </script>
+</body>
+</html>
